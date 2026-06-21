@@ -2,12 +2,11 @@
 import Navbar from '~/components/Navbar.vue';
 import Header from '~/components/Header.vue';
 
-const header = ref('Photography');
+const header = ref('Contact Information');
 const description = ref(
-  `Everyone has hobbies. One of my hobbies is analog
-  photography. Every photo here was taken on a film camera
-  since I started college.`);
-const navbarHeaderHue = ref(0);
+  `Need to reach me about something? You can contact me
+  on any of my social media or the contact form below.`);
+const navbarHeaderHue = ref(40);
 
 </script>
 
@@ -16,7 +15,7 @@ const navbarHeaderHue = ref(0);
       :navbar_hue="navbarHeaderHue">
     </Navbar>
     <Header 
-      :header='header' 
+      :header='header'
       :description='description'
       :header_color="navbarHeaderHue">
     </Header>

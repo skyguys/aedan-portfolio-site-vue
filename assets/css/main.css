@@ -8,3 +8,7 @@ body {
     filter: blur(0.5rem);
     transition: 0.75s;
 }
+
+.main-content{
+  margin: 5% 15%;
+}

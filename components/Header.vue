@@ -13,6 +13,10 @@ const props = defineProps({
   image: {
     type: String,
     required: false
+  },
+  header_color: {
+    type: Number,
+    required: true,    
   }
 })
 
@@ -54,10 +58,13 @@ console.log("loaded!");
 <template>
   <div class="header-container">
     <div class="fade-in row align-items-center">
-      <div v-if="props.image" class="col-md-6 header-image">
-        <NuxtImg :src='props.image'></NuxtImg>
+      <div 
+        v-if="props.image" 
+        class="col-md-6 header-image">
+          <NuxtImg :src='props.image'></NuxtImg>
       </div>
-      <div :class="[
+      <div 
+        :class="[
           props.image ? 'col-md-6' : 'col-12',
           'header-content'
         ]"   
@@ -65,7 +72,7 @@ console.log("loaded!");
         <h2>{{ header }}</h2>
         <p>{{ description }}</p>
       </div>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -80,7 +87,7 @@ console.log("loaded!");
   justify-content: center;
 
   color: white;
-  background: linear-gradient( hsla(0, 10%, 40%, 0.9), hsla(48, 10%, 20%, 0.9) )
+  background: linear-gradient( hsla(v-bind('header_color'), 10%, 40%, 0.9), hsla(v-bind('header_color'), 10%, 20%, 0.9) )
 }
 
 .header-image{
@@ -99,9 +106,9 @@ console.log("loaded!");
   border-radius: 50%;
 }
 
-.banner-bg img:hover{
+.header-image img:hover{
   border-radius: 25%;
-  transform: scale(1.10);
+  transform: scale(1.05);
 }
   
 .header-content{
