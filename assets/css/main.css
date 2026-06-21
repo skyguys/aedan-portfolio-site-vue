@@ -1,0 +1,10 @@
+
+body {
+    font-family: "JetBrains Mono", 'Courier New', Courier, monospace;
+}
+
+.fade-in{
+    opacity: 0;
+    filter: blur(0.5rem);
+    transition: 0.75s;
+}
