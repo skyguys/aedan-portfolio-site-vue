@@ -97,7 +97,7 @@ console.log("loaded!");
 }
 
 .header-image > img{
-  max-width: 70%;
+  max-width: 80%;
   max-height: 45vh;
   width: auto;
   height: auto;

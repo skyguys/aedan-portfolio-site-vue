@@ -2,6 +2,7 @@
 import Navbar from '~/components/Navbar.vue';
 import Header from '~/components/Header.vue';
 import InfoCard from '~/components/InfoCard.vue';
+import BootstrapCarousel from '~/components/BootstrapCarousel.vue';
 
 const header = ref('Hi, I\'m Aedan!');
 const description = ref(
@@ -10,6 +11,43 @@ const description = ref(
   my skillset to the workforce in a SWE or IT environment.`);
 const image = ref("/images/main/aedan.jpg")
 const navbarHeaderHue = ref(180) 
+
+const aboutMeDescription = ref([
+  `I currently reside in the greader Los Angeles area and am looking for
+  SWE and IT-related roles. I recently graduated from UC Irvine in 
+  June! I've been spending my free time learning new technologies,
+  such as Vue and Nuxt, which this site is built on.`,
+
+  `My projects can be found in the 'Portfolio' tab above. These range
+  from class projects, hobby projects, and hackathon projects.
+  In addition, my photography can be found under the 'Photography' tab.`,
+
+  `If you would like to contact me for any reason, you can click the 
+  'Contact' tab above to send me a message!`,
+
+  `In my free time, when I'm not programming or learning new technologies,
+  I enjoy traveling, photography, bowling, and car modification.`
+])
+
+const missionStatementDescription = ref([
+  `I take pride in my code being used to hopefully progress the world and to 
+  help others. Every piece of software I create is hopefully a positive 
+  solution to an existing problem, hopefully making someone's life just a 
+  little bit easier.`,
+
+  `Whether that's a website to help market a business, a game to teach kids
+  digital literacy, or a desktop program to reduce the barrier of access to 
+  paid software, my goal is to create software to progress the world.`,
+
+  `If this missions statement aligns with yours, we may be a good match!`
+])
+
+
+
+const route = useRoute()
+const { data: index } = await useAsyncData(route.path, () => {
+  return queryCollection('index').path(route.path).first()
+})
 
 </script>
 
@@ -28,22 +66,19 @@ const navbarHeaderHue = ref(180)
       <InfoCard 
         :flipped="false" 
         heading="ABOUT ME"
-        description="
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni 
-          assumenda cupiditate, fugit nemo quos suscipit expedita ipsa delectus 
-          optio, atque, nisi molestias nam doloribus enim dicta tenetur 
-          reiciendis est esse?  ">
-            <img src="/images/main/aedan.jpg" style="width: 100%"></img>
+        :description="aboutMeDescription"
+      >
+        <!-- Only render if we can find the index content.-->
+        <BootstrapCarousel 
+          v-if="index"
+          :images="index.images"
+          :image_path="'/images/main/carousel/'"></BootstrapCarousel>
       </InfoCard>
       <InfoCard 
         :flipped="true" 
-        heading="ABOUT ME"
-        description="
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni 
-          assumenda cupiditate, fugit nemo quos suscipit expedita ipsa delectus 
-          optio, atque, nisi molestias nam doloribus enim dicta tenetur 
-          reiciendis est esse?  ">
-            <h1>Hello world!</h1>
+        heading="Mission Statement"
+        :description="missionStatementDescription"
+      >
       </InfoCard>
     </div>
 </template>

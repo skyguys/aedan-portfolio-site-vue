@@ -12,3 +12,11 @@ body {
 .main-content{
   margin: 5% 15%;
 }
+
+p {
+  font-size: 1.15rem;
+}
+
+h2{
+  font-size: 1.75rem;
+}
