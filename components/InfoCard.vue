@@ -49,19 +49,4 @@ const colOrderClass = computed(() => {
 
 <style>
 
-h1 {
-  font-family: 'Helvetica';
-  font-weight: bold;
-  font-size: 5rem;
-  letter-spacing: -0.25rem;
-  line-height: 4rem;
-}
-
-@media (max-width: 576px){
-  h1{
-    font-size: 3rem;
-    line-height: 3rem;
-  }
-}
-
 </style>

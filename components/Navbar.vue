@@ -11,29 +11,38 @@ const props = defineProps({
 })
 </script>
 
-
 <template>
 	<div class="custom-navbar">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">Aedan Magsombol</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" 
+                aria-label="Toggle navigation"
+        >
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-              <NuxtLink class="nav-link" to="/">Home</NuxtLink>
+              <NuxtLink class="nav-link" to="/">
+                Home
+              </NuxtLink>
 						</li>
 						<li class="nav-item dropdown">	
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" href="#" role="button" 
+                 data-bs-toggle="dropdown" aria-expanded="false"
+              >
 								Portfolio
 							</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Resume</a></li>
+								<li>
+                  <NuxtLink class="dropdown-item" to="/resume">
+                    Resume
+                  </NuxtLink>
+                </li>
 								<li><hr class="dropdown-divider"></li>
-								<!-- <li><a class="dropdown-item" href="#">Project #1</a></li> -->
-								<!-- <li><a class="dropdown-item" href="#">Project #2</a></li> -->
                 <li v-for="project in projects" :key="project.path">
                   <NuxtLink class="dropdown-item" :to="project.path">
                     {{ project.title }}
@@ -42,10 +51,14 @@ const props = defineProps({
 							</ul>
 						</li>
 						<li class="nav-item">
-							<NuxtLink class="nav-link" to="/photography">Photography</NuxtLink>
+							<NuxtLink class="nav-link" to="/photography">
+                Photography
+              </NuxtLink>
 						</li>
 						<li class="nav-item">
-							<NuxtLink class="nav-link" to="/contact">Contact</NuxtLink>
+							<NuxtLink class="nav-link" to="/contact">
+                Contact
+              </NuxtLink>
 						</li>
 					</ul>
 				</div>
@@ -54,7 +67,7 @@ const props = defineProps({
   </div>
 </template>
 
-<style>
+<style scoped>
 
 .navbar-toggler{
   border: none;
@@ -64,6 +77,12 @@ const props = defineProps({
   transition: 0.5s;
   background-color: rgba(0, 0, 0, 0.15);
 }
+
+.nav-item:hover > a, .dropdown-item:hover {
+  transition: 0.25;
+  transform: translate(0px, -3px);
+}
+
 
 .custom-navbar{
   background-color: hsl(v-bind('props.navbar_hue'), 10%, 60%);

@@ -3,6 +3,7 @@ import Navbar from '~/components/Navbar.vue';
 import Header from '~/components/Header.vue';
 import InfoCard from '~/components/InfoCard.vue';
 import BootstrapCarousel from '~/components/BootstrapCarousel.vue';
+import Footer from '~/components/Footer.vue';
 
 const header = ref('Hi, I\'m Aedan!');
 const description = ref(
@@ -52,6 +53,7 @@ const { data: index } = await useAsyncData(route.path, () => {
 </script>
 
 <template>
+  <div>
     <Navbar 
       :navbar_hue="navbarHeaderHue">
     </Navbar>
@@ -72,7 +74,7 @@ const { data: index } = await useAsyncData(route.path, () => {
         <BootstrapCarousel 
           v-if="index"
           :images="index.images"
-          :image_path="'/images/main/carousel/'"></BootstrapCarousel>
+          :image_path="index.image_path"></BootstrapCarousel>
       </InfoCard>
       <InfoCard 
         :flipped="true" 
@@ -81,4 +83,26 @@ const { data: index } = await useAsyncData(route.path, () => {
       >
       </InfoCard>
     </div>
+    <Footer :footer_color="navbarHeaderHue"></Footer>
+  </div>
 </template>
+
+<style scoped>
+
+.carousel{
+  margin:2.5%;
+}
+
+.carousel img {
+  min-width: 100%;
+  height: 25vw;
+  object-fit: contain;
+}
+
+@media (max-width: 768px){
+  .carousel img{
+    height: 50vw;
+  }
+}
+
+</style>

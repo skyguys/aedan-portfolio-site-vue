@@ -76,10 +76,10 @@ console.log("loaded!");
   </div>
 </template>
 
-<style>
+<style scoped>
 
 .header-container{
-  height: 60vh;
+  height: 50vh;
   padding: 0% 20%;
 
   display: flex;
@@ -87,7 +87,8 @@ console.log("loaded!");
   justify-content: center;
 
   color: white;
-  background: linear-gradient( hsla(v-bind('header_color'), 10%, 40%, 0.9), hsla(v-bind('header_color'), 10%, 20%, 0.9) )
+  background: linear-gradient(hsla(v-bind('header_color'), 10%, 40%, 0.9), 
+                              hsla(v-bind('header_color'), 10%, 20%, 0.9) )
 }
 
 .header-image{
@@ -113,6 +114,18 @@ console.log("loaded!");
   
 .header-content{
   text-align:center;
+}
+
+@media (max-width: 768px){
+  .header-container{
+    height: 65vh;
+  }
+}
+
+@media (max-width: 576px){
+  .header-container{
+    height: 80vh;
+  }
 }
 
 </style>

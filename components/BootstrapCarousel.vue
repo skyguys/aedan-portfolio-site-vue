@@ -60,22 +60,6 @@ console.log(imagePaths)
 </div>
 </template>
 
-<style>
-
-.carousel{
-  margin:2.5%;
-}
-
-.carousel img {
-  min-width: 100%;
-  height: 25vw;
-  object-fit: contain;
-}
-
-@media (max-width: 768px){
-  .carousel img{
-    height: 50vw;
-  }
-}
+<style scoped>
 
 </style>
