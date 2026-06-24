@@ -12,7 +12,13 @@ description_long: >
   At it's core, it's a movie search engine, but there's a lot of intricacies
   under the hood and with the decisions we made. 
 date_range: March 2026 - June 2026
-images: "[]"
+image_path: /images/projects/fabflix/
+images: 
+  - fabflix1.png
+  - fabflix2.png
+  - fabflix3.png
+  - fabflix4.png
+  - fabflix5.png
 bulletpoints:
   - Developed a <strong>full stack</strong> film catalog site with 
       <strong>1000s</strong> of films, featuring 

@@ -13,7 +13,10 @@ description_long: >
   right information out. Tradtional programs cost quite a bit and required 
   Adobe products, which I do not have on Linux. Thus, I made my own version.
 date_range: Sept 2024 - Present
-images: "[]"
+image_path: /images/projects/openneg/
+images: 
+  - openneg1.png
+  - openneg2.png
 bulletpoints:
   - Developed a Python application to convert film negatives into positive images
   - Averaging <strong>30% faster computation time</strong> than commonly-used 

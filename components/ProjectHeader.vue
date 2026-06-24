@@ -1,6 +1,8 @@
 
 <script setup>
 
+import { runFadeIn } from '#imports';
+
 const props = defineProps({
   project_title: {
     type: String,
@@ -30,24 +32,14 @@ const props = defineProps({
 })
 
 onMounted(() => {
-const fadeInElements = document.getElementsByClassName("fade-in")
-
-function fadeIn(fadeIn){
-
-    for (let i = 0; i < fadeIn.length; i++){
-        fadeIn[i].style.opacity = 1;
-        fadeIn[i].style.filter = "blur(0)";
-    }
-}
-
-fadeIn(fadeInElements);
+  runFadeIn();
 })
 
 </script>
 
 <template>
   <div class="header-container">
-    <div class="header-content">
+    <div class="header-content fade-in">
       <h1>
         {{ project_title }}
       </h1>

@@ -1,6 +1,8 @@
 <script setup>
 import ProjectHeader from '~/components/ProjectHeader.vue';
 import BootstrapCarousel from '~/components/BootstrapCarousel.vue';
+import ImageModal from '~/components/ImageModal.vue';
+import Footer from '~/components/Footer.vue';
 
 
 const route = useRoute()
@@ -8,8 +10,13 @@ const { data: project } = await useAsyncData(route.path, () => {
   return queryCollection('projects').path(route.path).first()
 })
 const navbarHeaderHue = Math.floor(Math.random() * (361));
+const modalId = ref("projectsImageModal");
+const carouselId = ref("projectsImageCarousel")
 
-const testImages = ref(['grad.jpg', 'lahacks.jpg'])
+const currentImage = ref('');
+function updateCurrentImage(image){
+  currentImage.value = image;
+}
 
 </script>
 
@@ -44,28 +51,32 @@ const testImages = ref(['grad.jpg', 'lahacks.jpg'])
       <p>{{ project.description_long }}</p>
 
       <div class="row">
-        <div class="col-7">
-
-      <!-- <img :src="project.images[0]"> -->
-      <ul>
-        <li v-for="bulletpoint in project.bulletpoints">
-          <!-- {{ bulletpoint }} -->
-          <div v-html="bulletpoint"></div>
-        </li>
-      </ul>
+        <div class="col-12 col-lg-7">
+          <ul>
+            <li v-for="bulletpoint in project.bulletpoints">
+              <!-- {{ bulletpoint }} -->
+              <div v-html="bulletpoint"></div>
+            </li>
+          </ul>
         </div>
-        <div class="col-5">
-      <BootstrapCarousel
-        :images="testImages",
-        image_path="/images/main/carousel/"
-      >
-      </BootstrapCarousel>
+        <div class="col-12 col-lg-5">
+          <ImageModal
+            :modal_id="modalId"
+            :image_path="currentImage"
+          >
+          </ImageModal>
+          <BootstrapCarousel
+            :images="project.images",
+            :image_path="project.image_path"
+            :modal_id="modalId"
+            :carousel_id="carouselId"
+            @current-image="updateCurrentImage"
+          >
+          </BootstrapCarousel>
         </div>
       </div>
-
-
-
     </div>
+    <Footer :footer_color="navbarHeaderHue" />
   </div>
 
 </template>
@@ -77,7 +88,7 @@ const testImages = ref(['grad.jpg', 'lahacks.jpg'])
 }
 
 .carousel{
-  /* margin: 2.5% 20%; */
+  /* margin: 2% 0%; */
   /* background-color: hsl(v-bind(navbarHeaderHue), 30%, 80%); */
 }
 
@@ -86,7 +97,5 @@ const testImages = ref(['grad.jpg', 'lahacks.jpg'])
   height: 25vw;
   object-fit: contain;
 }
-
-
 
 </style>

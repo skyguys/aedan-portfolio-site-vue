@@ -11,7 +11,11 @@ description_long: >
   I taught myself the ins and outs of how search engines work: tokenization,
   cosine similarity, and massively optimizing the search to be efficient.
 date_range: Sept 2024 - Present
-images: "[]"
+image_path: /images/projects/petrsearch/
+images: 
+  - petrsearch1.png
+  - petrsearch2.png
+  - petrsearch3.png
 bulletpoints:
   - Built a scalable search engine indexing <strong>55,000 URLs</strong> 
       designed for corpus growth

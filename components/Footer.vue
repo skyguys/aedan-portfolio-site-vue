@@ -33,6 +33,7 @@ const currentYear = currentDate.getFullYear();
   justify-content: center;
 
   color: white;
+  text-align: center;
   background: linear-gradient(hsla(v-bind('footer_color'), 10%, 40%, 0.9), 
                               hsla(v-bind('footer_color'), 10%, 20%, 0.9) )
 }

@@ -14,7 +14,14 @@ description_long: >
   development to create a unique game to teach the importance of strong 
   passwords.
 date_range: 36 hours (Hackathon)
-images: "[]"
+image_path: /images/projects/hackaton/
+images: 
+  - hackaton1.png
+  - hackaton2.png
+  - hackaton3.png
+  - hackaton4.jpg
+  - hackaton5.jpg
+  - hackaton6.jpg
 bulletpoints:
   - Created an interactive typing game under the guidance of the Roblox team 
       to teach adolescents the importance of strong passwords

@@ -12,11 +12,17 @@ description_long: >
   with the previous site and to make the site extremely modular.
 date_range: January 2026 - Present
 github: https://github.com/skyguys/aedan-portfolio-site-vue
-images: "[]"
+image_path: /images/projects/fabflix/
+images: 
+  - fabflix1.png
+  - fabflix2.png
+  - fabflix3.png
+  - fabflix4.png
+  - fabflix5.png
 bulletpoints:
   - Developed a personal portfolio using <strong>Vue</strong> and 
     <strong>Nuxt Content</strong>
-  - Utilized <strong>Bootstrap< classes and components/strong> for 
+  - Utilized <strong>Bootstrap classes and components</strong> for 
     <strong>grid layouts and image modals</strong>
   - Built <strong>responsive layouts</strong> with <strong>Bootstrap</strong> and 
     <strong>media queries</strong> to ensure compatibility across different devices and screen sizes

@@ -13,6 +13,7 @@ export default defineContentConfig({
         description_long: z.string(),
         date_range: z.string(),
         github: z.string().optional(),
+        image_path: z.string(),
         images: z.array(z.string()),
         bulletpoints: z.array(z.string())
       })

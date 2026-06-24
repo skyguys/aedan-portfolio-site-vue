@@ -74,7 +74,10 @@ const { data: index } = await useAsyncData(route.path, () => {
         <BootstrapCarousel 
           v-if="index"
           :images="index.images"
-          :image_path="index.image_path"></BootstrapCarousel>
+          :image_path="index.image_path"
+          carousel_id="imageCarousel"
+        >
+        </BootstrapCarousel>
       </InfoCard>
       <InfoCard 
         :flipped="true" 
