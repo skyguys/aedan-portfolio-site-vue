@@ -9,6 +9,11 @@ const props = defineProps({
     required: true
   }
 })
+
+const backgroundColor = computed(
+  () => `hsl(${props.navbar_hue}, 10%, 60%)`
+)
+
 </script>
 
 <template>
@@ -67,32 +72,45 @@ const props = defineProps({
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
+@mixin hover-highlight {
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+@mixin hover-move {
+  transition: 0.25;
+  transform: translate(0px, -3px);
+}
 
 .navbar-toggler{
   border: none;
 }
 
-.nav-item:hover > a, .dropdown-item:hover {
-  transition: 0.5s;
-  background-color: rgba(0, 0, 0, 0.15);
+.nav-item {
+  &:hover > a {
+    @include hover-highlight;
+    @include hover-move;
+  }
 }
 
-.nav-item:hover > a, .dropdown-item:hover {
-  transition: 0.25;
-  transform: translate(0px, -3px);
+.dropdown-item {
+  &:hover {
+    @include hover-highlight;
+    @include hover-move;
+  }
 }
-
 
 .custom-navbar{
-  background-color: hsl(v-bind('props.navbar_hue'), 10%, 60%);
+  background-color: unquote("hsl(v-bind('props.navbar_hue'), 10%, 60%)");
   position: sticky;
   z-index: 1000;
-    top: 0;
+  top: 0;
 }
 
 .dropdown-menu{
-  background-color: hsl(v-bind('props.navbar_hue'), 10%, 55%);
+  background-color: unquote("hsl(v-bind('props.navbar_hue'), 10%, 50%)");
   
 }
 

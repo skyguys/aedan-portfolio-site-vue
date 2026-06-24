@@ -119,7 +119,6 @@ onMounted(() => {
 <style scoped>
 
 .carousel-item {
-  /* display: flex; */
   align-content: center;
 }
 

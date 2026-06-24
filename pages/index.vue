@@ -90,21 +90,25 @@ const { data: index } = await useAsyncData(route.path, () => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .carousel{
   margin:2.5%;
+
+  img{
+    min-width: 100%;
+    height: 25vw;
+    object-fit: contain;
+  }
 }
 
-.carousel img {
-  min-width: 100%;
-  height: 25vw;
-  object-fit: contain;
-}
 
 @media (max-width: 768px){
-  .carousel img{
-    height: 50vw;
+  .carousel {
+
+    img{
+      height: 50vw;
+    }
   }
 }
 

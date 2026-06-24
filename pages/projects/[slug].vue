@@ -82,7 +82,7 @@ function updateCurrentImage(image){
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .main-content{
   margin: 3% 15%;
@@ -93,10 +93,12 @@ function updateCurrentImage(image){
   /* background-color: hsl(v-bind(navbarHeaderHue), 30%, 80%); */
 }
 
-.carousel img {
-  min-width: 100%;
-  height: 25vw;
-  object-fit: contain;
+.carousel {
+  img {
+    min-width: 100%;
+    height: 25vw;
+    object-fit: contain;
+  }
 }
 
 </style>

@@ -4,7 +4,7 @@ title_additional_info: Personal Site Recreated in Vue + Nuxt
 description: >
   A personal portfolio site to showcase my projects and photography.
 tools: >
-  Vue, Nuxt, Bootstrap, JavaScript
+  Vue, Nuxt, Bootstrap, SCSS, JavaScript
 description_long: >
   I originally made my V1 of my website in static HTML, CSS, and JavaScript 
   for a course at UC Irvine. However, I realized quickly how limited it was in 

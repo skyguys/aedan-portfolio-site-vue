@@ -40,7 +40,6 @@ img {
     margin: auto;
 }
 
-
 /* Put in place because some devices have it off-center */
 .modal-content{
   display: flex;
