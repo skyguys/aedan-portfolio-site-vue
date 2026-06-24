@@ -21,7 +21,7 @@ const props = defineProps({
       <div class="modal-content border-0">
         <NuxtImg
           :src="image_path"
-          class="rounded shadow-lg"
+          class="rounded shadow-lg img-fluid"
         >  
         </NuxtImg>
       </div>

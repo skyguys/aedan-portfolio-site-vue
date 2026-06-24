@@ -88,7 +88,8 @@ onMounted(() => {
         >
           <NuxtImg 
             :src="image"
-            class="d-block w-100">
+            class="d-block w-100"
+          >
           </NuxtImg>
         </button>
       </div>
@@ -98,7 +99,8 @@ onMounted(() => {
       <div class="carousel-item active">
         <NuxtImg 
           :src="'/images/general/placeholder.png'"
-          class="d-block w-100">
+          class="d-block w-100"
+        >
         </NuxtImg>
       </div>
     </div>

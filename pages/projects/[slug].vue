@@ -9,11 +9,12 @@ const route = useRoute()
 const { data: project } = await useAsyncData(route.path, () => {
   return queryCollection('projects').path(route.path).first()
 })
+
 const navbarHeaderHue = Math.floor(Math.random() * (361));
 const modalId = ref("projectsImageModal");
 const carouselId = ref("projectsImageCarousel")
 
-const currentImage = ref('');
+const currentImage = ref('/images/general/placeholder.png');
 function updateCurrentImage(image){
   currentImage.value = image;
 }
@@ -66,7 +67,7 @@ function updateCurrentImage(image){
           >
           </ImageModal>
           <BootstrapCarousel
-            :images="project.images",
+            :images="project.images"
             :image_path="project.image_path"
             :modal_id="modalId"
             :carousel_id="carouselId"
