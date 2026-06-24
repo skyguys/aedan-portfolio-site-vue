@@ -10,10 +10,6 @@ const props = defineProps({
   }
 })
 
-const backgroundColor = computed(
-  () => `hsl(${props.navbar_hue}, 10%, 60%)`
-)
-
 </script>
 
 <template>
@@ -102,16 +98,15 @@ const backgroundColor = computed(
   }
 }
 
+.custom-navbar, .dropdown-menu{
+  --base-color: v-bind('props.navbar_hue');
+  background-color: hsl(var(--base-color), 10%, 60%);
+}
+
 .custom-navbar{
-  background-color: unquote("hsl(v-bind('props.navbar_hue'), 10%, 60%)");
   position: sticky;
   z-index: 1000;
   top: 0;
-}
-
-.dropdown-menu{
-  background-color: unquote("hsl(v-bind('props.navbar_hue'), 10%, 50%)");
-  
 }
 
 .nav-item{

@@ -4,7 +4,6 @@ import BootstrapCarousel from '~/components/BootstrapCarousel.vue';
 import ImageModal from '~/components/ImageModal.vue';
 import Footer from '~/components/Footer.vue';
 
-
 const route = useRoute()
 const { data: project } = await useAsyncData(route.path, () => {
   return queryCollection('projects').path(route.path).first()

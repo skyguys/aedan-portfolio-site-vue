@@ -25,6 +25,17 @@ export default defineContentConfig({
         images: z.array(z.string()),
         image_path: z.string()
       })
+    }),
+    work: defineCollection({
+      source: 'work/**',
+      type: 'page',
+      schema: z.object({
+        title: z.string(),
+        bulletpoints: z.array(z.string()),
+        primary_info: z.string(),
+        secondary_info: z.string(),
+        tertiary_info: z.string().optional()
+      })
     })
   }
 })

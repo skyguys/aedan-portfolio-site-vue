@@ -21,6 +21,10 @@ p, li, span {
   font-size: 1.15rem;
 }
 
+h3{
+  font-size: 1.5rem;
+}
+
 h2{
   font-size: 1.75rem;
 }
@@ -32,16 +36,6 @@ h1 {
   letter-spacing: -0.25rem;
   line-height: 4rem;
 }
-
-/* hr {
-    display: block;
-    height: 3px;
-    border: 0;
-    border-top: 3px solid #000000;
-    margin: 1em auto;
-    padding: 0;
-    opacity: 1;
-} */
 
 @media (max-width: 768px){
   p, li, span{

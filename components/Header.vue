@@ -29,11 +29,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="header-container">
-    <div class="fade-in row align-items-center">
+  <div class="header-container fade-in row">
+    <!-- <div class="fade-in row"> -->
       <div 
         v-if="props.image" 
-        class="col-md-6 d-none d-sm-block header-image">
+        class="col-md-6 d-none d-sm-flex header-image">
           <NuxtImg :src='props.image'></NuxtImg>
       </div>
       <div 
@@ -45,13 +45,15 @@ onMounted(() => {
         <h2>{{ header }}</h2>
         <p>{{ description }}</p>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
 <style lang="scss" scoped>
 
+
 .header-container{
+
   height: 50vh;
   padding: 0% 20%;
 
@@ -60,12 +62,13 @@ onMounted(() => {
   justify-content: center;
 
   color: white;
-  background: linear-gradient(unquote('hsla(v-bind("header_color"), 10%, 40%, 0.9)'), 
-                              unquote('hsla(v-bind("header_color"), 10%, 20%, 0.9)'))
+
+  --base-color: v-bind('props.header_color');
+  background: linear-gradient(hsla(var(--base-color), 10%, 40%, 0.9), 
+                              hsla(var(--base-color), 10%, 20%, 0.9))
 }
 
 .header-image{
-  display: flex;
   align-items: center;
   justify-content: center;
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Navbar from '~/components/Navbar.vue';
 import Header from '~/components/Header.vue';
+import ProjectHeader from '~/components/ProjectHeader.vue';
 
 const header = ref('Photography');
 const description = ref(
@@ -15,9 +16,9 @@ const navbarHeaderHue = ref(0);
     <Navbar 
       :navbar_hue="navbarHeaderHue">
     </Navbar>
-    <Header 
-      :header='header' 
-      :description='description'
+    <ProjectHeader 
+      :project_title='header' 
+      :project_title_additional_info='description'
       :header_color="navbarHeaderHue">
-    </Header>
+    </ProjectHeader>
 </template>
