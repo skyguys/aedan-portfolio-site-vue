@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import Navbar from '~/components/Navbar.vue';
-import Header from '~/components/Header.vue';
 import ProjectPill from '~/components/ProjectPill.vue';
 import ResumeCard from '~/components/ResumeCard.vue';
 import ProjectHeader from '~/components/ProjectHeader.vue';
+import TechnologyCard from '~/components/TechnologyCard.vue';
+import Footer from '~/components/Footer.vue';
 
 const header = ref('Resume');
 const description = ref(
@@ -14,12 +15,14 @@ const navbarHeaderHue = ref(90);
 const { data: projects } = await useAsyncData('projects', () =>
   queryCollection('projects').all()
 )
-console.log(projects.value);
 
 const { data: work } = await useAsyncData('work', () =>
   queryCollection('work').all()
 )
-console.log(work.value);
+
+const { data: technologies } = await useAsyncData('technologies', () =>
+  queryCollection('technologies').all()
+)
 
 const workSliced = work.value?.slice(0, 2);
 const educationSliced = work.value?.slice(2)
@@ -29,13 +32,14 @@ console.log(workSliced);
 </script>
 
 <template>
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <div>
     <Navbar 
       :navbar_hue="navbarHeaderHue">
     </Navbar>
     <ProjectHeader 
       :project_title='header' 
-      :project_title_additional_info='description'
+      :description='description'
       :header_color="navbarHeaderHue">
     </ProjectHeader>
     <div class="main-content">
@@ -74,8 +78,22 @@ console.log(workSliced);
           :tertiary_info="e.tertiary_info"
         >
         </ResumeCard>
+      <hr />
       <h2>Tools</h2>
+      <div class="row">
+        <TechnologyCard
+          v-for="technology in technologies"
+          :class_name="technology.class_name"
+          :title="technology.title"
+          class="col-4 col-md-2"
+        >
+        </TechnologyCard>
+      </div>
+      <hr />
+      <h2>PDF Copy of Resume</h2>
+      <iframe src="https://drive.google.com/file/d/1oclOLG4M4khkQ_XZwZbMS0T_Gmjc6Dh3/preview"></iframe>
     </div>
+    <Footer :footer_color="navbarHeaderHue"></Footer>
   </div>
 </template>
 
@@ -83,6 +101,13 @@ console.log(workSliced);
 
 .main-content{
   margin: 3% 15%;
+}
+
+iframe {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 75vh;
 }
 
 </style>

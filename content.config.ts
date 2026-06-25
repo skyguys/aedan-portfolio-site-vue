@@ -36,6 +36,15 @@ export default defineContentConfig({
         secondary_info: z.string(),
         tertiary_info: z.string().optional()
       })
+    }),
+    technologies: defineCollection({
+      source: 'technologies/**',
+      type: 'page',
+      schema: z.object({
+        class_name: z.string(),
+        class_name_alt: z.string().optional(),
+        title: z.string()
+      })
     })
   }
 })

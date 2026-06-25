@@ -10,7 +10,7 @@ const props = defineProps({
   },
   project_title_additional_info: {
     type: String,
-    required: true
+    required: false
   },
   description: {
     type: String,

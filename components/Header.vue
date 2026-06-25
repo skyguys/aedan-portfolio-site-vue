@@ -29,8 +29,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="header-container fade-in row">
-    <!-- <div class="fade-in row"> -->
+  <div class="header-container">
+    <div class="header-content fade-in row">
       <div 
         v-if="props.image" 
         class="col-md-6 d-none d-sm-flex header-image">
@@ -38,28 +38,22 @@ onMounted(() => {
       </div>
       <div 
         :class="[
-          props.image ? 'col-md-6' : 'col-12',
-          'header-content'
+          props.image ? 'col-md-6' : 'col-12'
         ]"   
       >
         <h2>{{ header }}</h2>
         <p>{{ description }}</p>
       </div>
-    <!-- </div> -->
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 
-
 .header-container{
 
   height: 50vh;
   padding: 0% 20%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   color: white;
 
@@ -68,12 +62,20 @@ onMounted(() => {
                               hsla(var(--base-color), 10%, 20%, 0.9))
 }
 
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
 .header-image{
   align-items: center;
   justify-content: center;
 
   > img{
-    max-width: 80%;
+    max-width: 70%;
     max-height: 45vh;
     width: auto;
     height: auto;
@@ -88,9 +90,6 @@ onMounted(() => {
   }
 }
   
-.header-content{
-  text-align:center;
-}
 
 .row {
   > div {

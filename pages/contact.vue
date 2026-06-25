@@ -17,7 +17,7 @@ const navbarHeaderHue = ref(40);
     </Navbar>
     <ProjectHeader 
       :project_title='header'
-      :project_title_additional_info='description'
+      :description='description'
       :header_color="navbarHeaderHue">
     </ProjectHeader>
 </template>

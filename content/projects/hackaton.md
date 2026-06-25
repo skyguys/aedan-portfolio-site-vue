@@ -1,6 +1,6 @@
 ---
 title: "Hackaton"
-title_additional_info: "LA Hacks '26 Roblox 4th Place"
+title_additional_info: "LA Hacks '26 Roblox Civility Challenge 4th Place"
 description: >
   A password-cracking game to teach adolescents digital literacy through 
   secure passwords.
@@ -14,6 +14,7 @@ description_long: >
   development to create a unique game to teach the importance of strong 
   passwords.
 date_range: 36 hours (Hackathon)
+github: "https://devpost.com/software/hack-a-ton-829q1s"
 image_path: /images/projects/hackaton/
 images: 
   - hackaton1.png
@@ -26,7 +27,7 @@ bulletpoints:
   - Created an interactive typing game under the guidance of the Roblox team 
       to teach adolescents the importance of strong passwords
   - Learned Luau on the fly to implement gameplay-defining features
-  - <strong>LA Hacks 2026 4th Place Winner (Roblox Category)</strong>
+  - <strong>LA Hacks 2026 4th Place Winner (Roblox Civility Challenge)</strong>
   - There's not much else to say, it's a roblox game! But we had a lot of fun
       learning Roblox Studio and Luau during the event.
 ---
