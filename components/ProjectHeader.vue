@@ -39,7 +39,7 @@ onMounted(() => {
 
 <template>
   <div class="header-container">
-    <div class="header-content fade-in">
+    <div class="header-content">
       <h1>
         {{ project_title }}
       </h1>

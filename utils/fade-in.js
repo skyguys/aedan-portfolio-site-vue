@@ -6,10 +6,13 @@ export function runFadeIn(){
   function fadeIn(fadeIn){
 
       for (let i = 0; i < fadeIn.length; i++){
-          fadeIn[i].style.opacity = 1;
-          fadeIn[i].style.filter = "blur(0)";
-      }
+        runFadeInSingleElement(fadeIn[i])      }
   }
 
   fadeIn(fadeInElements);
+}
+
+export function runFadeInSingleElement(element){
+  element.style.opacity = 1;
+  element.style.filter = "blur(0)";
 }
