@@ -47,7 +47,7 @@ const currentYear = currentDate.getFullYear();
           <h5>Home</h5>
         </NuxtLink>
         <NuxtLink
-          to="/contact"
+          to="contact"
         >
           <h5>Contact</h5>
         </NuxtLink>

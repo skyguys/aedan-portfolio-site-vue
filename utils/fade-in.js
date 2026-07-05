@@ -4,7 +4,6 @@ export function runFadeIn(){
   const fadeInElements = document.getElementsByClassName("fade-in")
 
   function fadeIn(fadeIn){
-
       for (let i = 0; i < fadeIn.length; i++){
         runFadeInSingleElement(fadeIn[i])      }
   }

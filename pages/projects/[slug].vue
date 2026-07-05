@@ -90,11 +90,6 @@ function updateCurrentImage(image){
   margin: 3% 15%;
 }
 
-.carousel{
-  /* margin: 2% 0%; */
-  /* background-color: hsl(v-bind(navbarHeaderHue), 30%, 80%); */
-}
-
 .carousel {
   img {
     min-width: 100%;

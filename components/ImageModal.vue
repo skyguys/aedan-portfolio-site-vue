@@ -29,7 +29,7 @@ const props = defineProps({
   </div>
 </template>
 
-<style>
+<style scoped>
 
 /* Fixes issue with vertical images and makes entire image fit */
 /* Modal border and padding background are fixed through bootstrap classes */

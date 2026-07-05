@@ -59,12 +59,6 @@ a > * {
   text-align: center;
 }
 
-// .col {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
 .photography-title, .photography-description{
   width: 50%;
   padding: 5%;
@@ -80,22 +74,16 @@ a > * {
 
 .pill{
 
-  // box-shadow: inset 0 0 0 0.5rem rgba(0, 0, 0, 0);
+  transition: 0.25s ease;
 
-  /* background-image: v-bind("`url(${props.image})`"); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), v-bind(bgImage);
   background-repeat: no-repeat; 
   background-position: center; 
   background-size: 150%;
-
-  transition: 0.25s ease;
-
   outline: 0.5rem solid transparent;
-
 
   &:hover{
 
-    // box-shadow: inset 0 0 0 0.5rem rgba(255, 255, 255, 1);
     outline-offset: -1rem;
     outline: 0.5rem solid white;
     background-size: 180%;
