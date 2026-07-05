@@ -9,6 +9,9 @@ const { data: project } = await useAsyncData(route.path, () => {
   return queryCollection('projects').path(route.path).first()
 })
 
+
+console.log("PROJECT: ", project.value)
+
 const navbarHeaderHue = Math.floor(Math.random() * (361));
 const modalId = ref("projectsImageModal");
 const carouselId = ref("projectsImageCarousel")
