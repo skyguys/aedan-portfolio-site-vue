@@ -10,8 +10,6 @@ const { data: project } = await useAsyncData(route.path, () => {
 })
 
 
-console.log("PROJECT: ", project.value)
-
 const navbarHeaderHue = Math.floor(Math.random() * (361));
 const modalId = ref("projectsImageModal");
 const carouselId = ref("projectsImageCarousel")
@@ -88,11 +86,6 @@ function updateCurrentImage(image){
 
 .main-content{
   margin: 3% 15%;
-}
-
-.carousel{
-  /* margin: 2% 0%; */
-  /* background-color: hsl(v-bind(navbarHeaderHue), 30%, 80%); */
 }
 
 .carousel {

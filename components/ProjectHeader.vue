@@ -73,7 +73,7 @@ onMounted(() => {
 
 @media (max-width: 768px){
   .header-container{
-    height: max(40vh, 300px);
+    height: max(50vh, 300px);
   }
 }
 

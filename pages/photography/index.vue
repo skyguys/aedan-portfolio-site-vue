@@ -7,13 +7,10 @@ import Footer from '~/components/Footer.vue';
 const { data: photography } = await useAsyncData('photography', () =>
   queryCollection('photography').all()
 )
-console.log(photography.value);
 
 const { data: photographyMetaData } = await useAsyncData(`photographyMetadata:${photography.value.stem}`, () =>
   queryCollection('photographyMetadata').all()
 )
-
-console.log(photographyMetaData.value);
 
 const header = ref('Photography');
 const description = ref(
@@ -34,6 +31,10 @@ const navbarHeaderHue = ref(0);
       :header_color="navbarHeaderHue">
     </ProjectHeader>
     <div class="main-content">
+      <h2>Photo Gallery</h2>
+      <p>Images here are categorized by format and/or location. 
+        Click one that interests you!</p>
+      <hr>
       <div class="row">
           <PhotographyPill 
                     v-if="photographyMetaData"
@@ -45,6 +46,31 @@ const navbarHeaderHue = ref(0);
             class="col-12 col-xl-6 photography-item"
           >
           </PhotographyPill>
+      </div>
+      <hr>
+      <h2>Photography Gear</h2>
+      <p>In case you're interested in my gear, here's what I have:</p>
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <p>Film:</p>
+          <ul>
+            <li>Pentax 17</li>
+            <li>Pentax Espio 80</li>
+            <li>Canon A-1</li>
+            <li>Minolta Maxxum/Alpha 7000</li>
+            <li>Polaroid Sun 600</li>
+            <li>Nimslo 3D</li>
+            <li>Bronica ETRSi</li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6">
+          <p>Digital:</p>
+          <ul>
+            <li>Fujifilm XT30-II</li>
+            <li>Samsung Galaxy S23</li>
+            <li>Sony DCR-TRV140 Digital 8 Camcorder</li>
+          </ul>
+        </div>
       </div>
     </div>
     <Footer

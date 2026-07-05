@@ -26,8 +26,6 @@ if (props.revealed_text.length > 30){
   textTruncated = props.revealed_text.slice(0, 30) + '...';
 }
 
-// const backgroundImage = ref(props.image)
-// console.log(props.image)
 const bgImage = computed(() => `url(${props.image})`);
 
 </script>

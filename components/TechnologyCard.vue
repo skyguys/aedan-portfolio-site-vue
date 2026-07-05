@@ -12,8 +12,6 @@ const props = defineProps({
   }
 })
 
-console.log(props.class_name);
-
 const classNameAlt = props.class_name + " colored";
 
 </script>
