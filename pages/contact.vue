@@ -9,6 +9,10 @@ const description = ref(
   on any of my social media or the contact form below.`);
 const navbarHeaderHue = ref(40);
 
+const { data: contact } = await useAsyncData(`contact`, () =>
+  queryCollection('contact').all()
+)
+
 onMounted(() => {
   const web3FormsScript = document.createElement('script');
   web3FormsScript.src = 'https://web3forms.com/client/script.js';
@@ -32,7 +36,19 @@ onMounted(() => {
     <div class="main-content">
       <h2>Social Media Contact</h2>
       <div class="row">
-        <div class="col-12 col-md-6">
+        <div 
+          v-if="contact"
+          v-for="social in contact"
+          class="col-12 col-md-6"
+        >
+          <SocialMediaBox
+            :image="social.icon"
+            :text="social.title"
+            :link="social.link"
+          ></SocialMediaBox>
+        </div>  
+
+        <!-- <div class="col-12 col-md-6">
           <SocialMediaBox
             image="/svg/linkedin.svg"
             text="Linkedin"
@@ -45,8 +61,7 @@ onMounted(() => {
             text="GitHub"
             link="https://github.com/skyguys"
           ></SocialMediaBox>
-          
-        </div>
+        </div> -->
       </div>
       <hr>
       <h3>You can also send me a form, which goes directly to my email.</h3>
@@ -73,6 +88,9 @@ onMounted(() => {
         <button type="submit">Submit</button>
       </form>
     </div>
+    <Footer
+      :footer_color="navbarHeaderHue"
+    ></Footer>
   </div>
 </template>
 

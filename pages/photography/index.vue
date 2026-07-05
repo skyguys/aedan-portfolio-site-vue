@@ -1,9 +1,8 @@
 <script setup>
 import Navbar from '~/components/Navbar.vue';
-import Header from '~/components/Header.vue';
 import ProjectHeader from '~/components/ProjectHeader.vue';
 import PhotographyPill from '~/components/PhotographyPill.vue';
-import ProjectPill from '~/components/ProjectPill.vue';
+import Footer from '~/components/Footer.vue';
 
 const { data: photography } = await useAsyncData('photography', () =>
   queryCollection('photography').all()
@@ -48,6 +47,9 @@ const navbarHeaderHue = ref(0);
           </PhotographyPill>
       </div>
     </div>
+    <Footer
+      :footer_color="navbarHeaderHue"
+    ></Footer>
 </template>
 
 <style scoped>

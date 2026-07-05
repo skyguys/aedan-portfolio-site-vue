@@ -66,7 +66,15 @@ export default defineContentConfig({
           ratio: z.number()
         }))
       })
-
+    }),
+    contact: defineCollection({
+      source: 'contact/*.md',
+      type: 'data',
+      schema: z.object({
+        title: z.string(),
+        icon: z.string(),
+        link: z.string(),
+      })
     })
   }
 })
