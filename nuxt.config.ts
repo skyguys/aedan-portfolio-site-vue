@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content', '@nuxt/image'],
 
+  runtimeConfig: {
+    public: {
+      baseUrl: 'http://localhost:3000'
+    }
+  },
+
   nitro: {
     prerender: {
       crawlLinks: true,

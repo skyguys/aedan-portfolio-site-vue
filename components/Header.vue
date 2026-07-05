@@ -52,8 +52,12 @@ onMounted(() => {
 
 .header-container{
 
+  display: flex;
+  align-items: center;
+
   height: 50vh;
   padding: 0% 20%;
+
 
   color: white;
 

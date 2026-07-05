@@ -45,6 +45,36 @@ export default defineContentConfig({
         class_name_alt: z.string().optional(),
         title: z.string()
       })
+    }),
+    photography: defineCollection({
+      source: 'photography/*.md',   
+      type: 'page',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        image_path: z.string()
+      })
+    }),
+    photographyMetadata: defineCollection({
+      source: 'photography/*.json',
+      type: 'data',
+      schema: z.object({
+        data: z.array(z.object({
+          src: z.string(),
+          width: z.number(),
+          height: z.number(),
+          ratio: z.number()
+        }))
+      })
+    }),
+    contact: defineCollection({
+      source: 'contact/*.md',
+      type: 'data',
+      schema: z.object({
+        title: z.string(),
+        icon: z.string(),
+        link: z.string(),
+      })
     })
   }
 })

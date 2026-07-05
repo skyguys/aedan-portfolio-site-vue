@@ -39,7 +39,7 @@ const props = defineProps({
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-                  <NuxtLink class="dropdown-item" to="/resume">
+                  <NuxtLink class="dropdown-item" to="/projects">
                     Resume
                   </NuxtLink>
                 </li>
