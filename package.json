@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "predev" : "node scripts/generate_image_dimensions.js",
     "dev": "nuxt dev",
+    "pregenerate" : "node scripts/generate_image_dimensions.js",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

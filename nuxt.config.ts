@@ -4,13 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content', '@nuxt/image'],
 
-  runtimeConfig: {
-    public: {
-      baseUrl: 'http://localhost:3000'
-    }
+  // For github pages yml
+  app: {
+    baseURL: '/'
   },
 
   nitro: {
+    preset: 'github_pages',
     prerender: {
       crawlLinks: true,
       routes: ['/'] // seed route for the crawler to start from
