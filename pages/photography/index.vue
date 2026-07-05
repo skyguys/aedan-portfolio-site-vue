@@ -2,14 +2,13 @@
 import Navbar from '~/components/Navbar.vue';
 import Header from '~/components/Header.vue';
 import ProjectHeader from '~/components/ProjectHeader.vue';
+import PhotographyPill from '~/components/PhotographyPill.vue';
 import ProjectPill from '~/components/ProjectPill.vue';
 
 const { data: photography } = await useAsyncData('photography', () =>
   queryCollection('photography').all()
 )
 console.log(photography.value);
-
-// if (photography )
 
 const { data: photographyMetaData } = await useAsyncData(`photographyMetadata:${photography.value.stem}`, () =>
   queryCollection('photographyMetadata').all()
@@ -36,13 +35,21 @@ const navbarHeaderHue = ref(0);
       :header_color="navbarHeaderHue">
     </ProjectHeader>
     <div class="main-content">
-      <ProjectPill v-if="photographyMetaData"
-        v-for="(collection, index) in photography"
-        :title="collection.title"
-        :image='photographyMetaData[index]?.data[0]?.src'
-        :revealed_text="collection.description"
-        :link="collection.path"
-      >
-      </ProjectPill>
+      <div class="row">
+          <PhotographyPill 
+                    v-if="photographyMetaData"
+          v-for="(collection, index) in photography"
+            :title="collection.title"
+            :image='photographyMetaData[index]?.data[0]?.src'
+            :revealed_text="collection.description"
+            :link="collection.path"
+            class="col-12 col-xl-6 photography-item"
+          >
+          </PhotographyPill>
+      </div>
     </div>
 </template>
+
+<style scoped>
+
+</style>
