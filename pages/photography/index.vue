@@ -7,13 +7,10 @@ import Footer from '~/components/Footer.vue';
 const { data: photography } = await useAsyncData('photography', () =>
   queryCollection('photography').all()
 )
-console.log(photography.value);
 
 const { data: photographyMetaData } = await useAsyncData(`photographyMetadata:${photography.value.stem}`, () =>
   queryCollection('photographyMetadata').all()
 )
-
-console.log(photographyMetaData.value);
 
 const header = ref('Photography');
 const description = ref(

@@ -78,8 +78,6 @@ async function loadAllImages(entries, resolvedImageFilePath, imagePathFromMarkdo
     }
   }
 
-  console.log(images);
-
   return images;
 }
 
@@ -93,6 +91,5 @@ async function getImageData(imageFilePath, relativeFilePathFromPublic){
     "ratio": myImage.width / myImage.height
   }
 
-  // console.log(imageData)
   return imageData;
 }

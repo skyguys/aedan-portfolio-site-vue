@@ -26,7 +26,6 @@ const { data: technologies } = await useAsyncData('technologies', () =>
 
 const workSliced = work.value?.slice(0, 2);
 const educationSliced = work.value?.slice(2)
-console.log(workSliced);
 
 
 </script>
